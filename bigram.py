@@ -54,7 +54,7 @@ def estimate_loss():
             logits, loss = model(X, Y)
             losses[k] = loss.item()
         out[split] = losses.mean()
-    model.train()
+    model.train() # Tells that model is training, really only affects BatchNorm and DropOut layers
     return out
 
 # super simple bigram model

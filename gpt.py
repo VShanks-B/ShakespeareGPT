@@ -22,7 +22,9 @@ m = model.to(device)
 model.load_state_dict(torch.load('model.pth'))
 model.eval()
 
+# Prompt the user to enter the fixed-size context
+terminal_context = input("Enter the fixed-size context: ")
+context = torch.tensor([encode(terminal_context)], dtype=torch.long, device=device)
 
 # generate from the model
-context = torch.zeros((1, 1), dtype=torch.long, device=device)
 print(decode(m.generate(context, max_new_tokens=500)[0].tolist()))

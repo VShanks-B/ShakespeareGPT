@@ -1,4 +1,4 @@
-# nanogpt-lecture
+# nanogpt based ShakespeareGPT
 
 ### Required Dependecies : Python, Pytorch
 
